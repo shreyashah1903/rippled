@@ -2899,7 +2899,7 @@ NetworkOPsImp::pubLedger(std::shared_ptr<ReadView const> const& lpAccepted)
 
             if (!lpAccepted->rules().enabled(featureXRPFees))
                 jvObj[jss::fee_ref] = Config::FEE_UNITS_DEPRECATED;
-            jvObj[jss::fee_base] = lpAccepted->fees().base.jsonClipped();
+            jvObj[jss::base_fee] = lpAccepted->fees().base.jsonClipped();
             jvObj[jss::reserve_base] =
                 lpAccepted->fees().accountReserve(0).jsonClipped();
             jvObj[jss::reserve_inc] =
@@ -3906,7 +3906,7 @@ NetworkOPsImp::subLedger(InfoSub::ref isrListener, Json::Value& jvResult)
             lpClosed->info().closeTime.time_since_epoch().count());
         if (!lpClosed->rules().enabled(featureXRPFees))
             jvResult[jss::fee_ref] = Config::FEE_UNITS_DEPRECATED;
-        jvResult[jss::fee_base] = lpClosed->fees().base.jsonClipped();
+        jvResult[jss::base_fee] = lpClosed->fees().base.jsonClipped();
         jvResult[jss::reserve_base] =
             lpClosed->fees().accountReserve(0).jsonClipped();
         jvResult[jss::reserve_inc] = lpClosed->fees().increment.jsonClipped();

@@ -259,7 +259,7 @@ JSS(failed);                // out: InboundLedger
 JSS(feature);               // in: Feature
 JSS(features);              // out: Feature
 JSS(fee);                   // out: NetworkOPs, Peers
-JSS(fee_base);              // out: NetworkOPs
+JSS(base_fee);              // out: NetworkOPs
 JSS(fee_div_max);           // in: TransactionSign
 JSS(fee_level);             // out: AccountInfo
 JSS(fee_mult_max);          // in: TransactionSign
